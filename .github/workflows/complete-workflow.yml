@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Zap auth 
     steps:
-    - name: Login
+    - name: Login zap
       run: |
         docker run --rm -v $(pwd):/zap/wrk/:rw -t ictu/zap2docker-weekly zap-baseline.py -I -j -t https://demo.website.net -r testreport.html --hook=/zap/auth_hook.py -z "auth.loginurl=http://testphp.vulnweb.com/login.php auth.username="test" auth.password="test"
