@@ -8,4 +8,4 @@ jobs:
     steps:
     - name: Login zap
       run: |
-        docker run --rm -v $(pwd):/zap/wrk/:rw -t ictu/zap2docker-weekly zap-baseline.py -I -j -t https://demo.website.net -r testreport.html --hook=/zap/auth_hook.py -z "auth.loginurl=http://testphp.vulnweb.com/login.php auth.username="test" auth.password="test"
+        docker run --rm -v $(pwd):/zap/wrk/:rw -t ictu/zap2docker-weekly zap-baseline.py -I -j -t http://testphp.vulnweb.com -r testreport.html --hook=/zap/auth_hook.py -z "auth.loginurl=http://testphp.vulnweb.com/login.php auth.username="test" auth.password="test""
